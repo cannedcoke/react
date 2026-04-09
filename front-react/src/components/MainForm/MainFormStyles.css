@@ -1,0 +1,124 @@
+/* Layout */
+.form-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 3rem;
+  align-items: start;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Card */
+.field-group {
+  background: var(--bg-1);
+  border: 1px solid var(--line-mid);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-top: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.field-group label:first-child {
+  margin-top: 0;
+}
+
+/* Inputs & Selects */
+input,
+select {
+  width: 100%;
+  background: var(--bg-2);
+  border: 1px solid var(--line-mid);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.65rem 0.9rem;
+  transition: border-color 0.15s, background 0.15s;
+  appearance: none;
+  outline: none;
+}
+
+input::placeholder { color: var(--text-3); }
+input:hover, select:hover { border-color: var(--line-bright); }
+input:focus, select:focus {
+  border-color: var(--accent);
+  background: var(--bg-3);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+select[multiple] {
+  min-height: 110px;
+  padding: 0.4rem;
+}
+
+select option {
+  background: var(--bg-2);
+  padding: 5px 8px;
+  color: var(--text);
+}
+
+select option:checked {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+select[multiple]::-webkit-scrollbar { width: 6px; }
+select[multiple]::-webkit-scrollbar-track { background: var(--bg-2); }
+select[multiple]::-webkit-scrollbar-thumb {
+  background: var(--line-bright);
+  border-radius: 3px;
+}
+select[multiple]::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
+
+/* Button */
+button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.6rem 1.2rem;
+  margin-top: 0.85rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+  width: fit-content;
+}
+
+button:hover { opacity: 0.88; }
+button:active { transform: scale(0.97); }
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
