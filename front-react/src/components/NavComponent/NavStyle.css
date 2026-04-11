@@ -1,5 +1,3 @@
-
-
 header {
   border-bottom: 1px solid var(--line);
   background-color: var(--bg-1);
@@ -27,6 +25,7 @@ header {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+
 @keyframes dot-cycle {
   0%   { background: var(--accent); }
   33%  { background: var(--green); }

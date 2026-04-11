@@ -1,4 +1,3 @@
-/* Layout */
 .form-group {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -15,7 +14,6 @@
   grid-column: 1 / -1;
 }
 
-/* Card */
 .field-group {
   background: var(--bg-1);
   border: 1px solid var(--line-mid);
@@ -25,7 +23,10 @@
   flex-direction: column;
 }
 
-/* Labels */
+.field-group label:first-child {
+  margin-top: 0;
+}
+
 label {
   display: block;
   font-family: 'Space Mono', monospace;
@@ -38,11 +39,6 @@ label {
   margin-bottom: 0.5rem;
 }
 
-.field-group label:first-child {
-  margin-top: 0;
-}
-
-/* Inputs & Selects */
 input,
 select {
   width: 100%;
@@ -90,7 +86,6 @@ select[multiple]::-webkit-scrollbar-thumb {
 }
 select[multiple]::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
 
-/* Button */
 button {
   display: inline-flex;
   align-items: center;
@@ -104,6 +99,7 @@ button {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
+  letter-spacing: 0.02em;
   cursor: pointer;
   transition: opacity 0.15s, transform 0.1s;
   width: fit-content;
@@ -112,7 +108,60 @@ button {
 button:hover { opacity: 0.88; }
 button:active { transform: scale(0.97); }
 
-/* Table */
+button.detalles_btn,
+button.vote_btn,
+button.comment_btn {
+  background: transparent;
+  color: var(--text-2);
+  border: 1px solid var(--line-mid);
+  padding: 0.28rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-top: 0;
+  margin-right: 5px;
+  border-radius: 4px;
+}
+
+button.detalles_btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+button.vote_btn:hover {
+  border-color: var(--green);
+  color: var(--green);
+  background: var(--green-dim);
+}
+
+button.comment_btn:hover {
+  border-color: var(--line-bright);
+  color: var(--text);
+  background: var(--bg-2);
+}
+
+button.send {
+  background: var(--green-dim);
+  color: var(--green);
+  border: 1px solid var(--green);
+  font-size: 0.8rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+button.send:hover {
+  background: var(--green);
+  color: #08090c;
+}
+
+input.comment_input {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  background: var(--bg-3);
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -121,4 +170,48 @@ table {
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
+}
+
+thead tr { border-bottom: 1px solid var(--line-mid); }
+
+th {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  text-align: left;
+  padding: 0.85rem 1rem;
+  background: var(--bg-1);
+  border: none;
+}
+
+td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-2);
+  vertical-align: middle;
+}
+
+td:first-child {
+  color: var(--text);
+  font-weight: 500;
+}
+
+tr:last-child td { border-bottom: none; }
+
+tbody tr { transition: background 0.1s; }
+
+tbody tr:hover td { background: var(--bg-2); }
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+input.comment_input {
+  margin-top: 0.4rem;
+  width: 100%;
 }
