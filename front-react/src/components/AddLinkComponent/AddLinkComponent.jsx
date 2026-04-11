@@ -5,7 +5,7 @@ function AddLink({tags}){
     const [link, setLink] = useState('');
     const [selectedTags, SetSelectedTags]= useState([])
 
-    async function addLink(params) {
+    async function addLink() {
         if(!link || selectedTags.length === 0){
             window.alert("completa los campos")
             return;
