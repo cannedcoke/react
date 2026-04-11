@@ -26,7 +26,13 @@
 }
 
 html { font-size: 15px; }
-
+main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2.5rem 2rem 4rem;
+}
 body {
   font-family: 'Space Grotesk', sans-serif;
   background-color: var(--bg);
