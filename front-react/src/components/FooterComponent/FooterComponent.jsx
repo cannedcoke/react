@@ -1,4 +1,5 @@
 import "./FooterStyles.css";
+// componente para el footer de la pagina
 function Footer() {
   return (
     <footer>

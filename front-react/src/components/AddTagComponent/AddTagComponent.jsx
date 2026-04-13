@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { postTag } from "../../../api";
 
+// elemento para agregar etiquetas
 function AddTag() {
   const [tag, SetTag] = useState("");
 
-  async function addTag(params) {
+  async function addTag() {
     if (!tag) {
       window.alert("completa el campo");
       return;

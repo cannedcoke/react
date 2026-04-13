@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { postLink } from "../../../api";
 
+// componente para agregar links
 function AddLink({tags}){
     const [link, setLink] = useState('');
     const [selectedTags, SetSelectedTags]= useState([])

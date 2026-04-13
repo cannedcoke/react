@@ -1,4 +1,5 @@
 import "./NavStyle.css"
+// componente para el header de la pagina
 function NavBar() {
   return (
     <header>

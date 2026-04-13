@@ -4,13 +4,16 @@ import AddTag from "../AddTagComponent/AddTagComponent";
 import { fetchTags, filterByTag, postVote,postComment } from "../../../api";
 import "./MainFormStyles.css";
 
+// componente para el contenido principal de la pagina
 function MainForm({ onSelectDetail }) {
+  // creo varaibles de estado para que react sepa cuando actulaizar la pagina
   const [tags, SetTags] = useState([]);
   const [records, SetRecords] =useState([])
   const [visibility, SetVisibility] = useState(null)
   const [commentText,SetCommentText ] = useState('')
   const [selectedTag, SetSelectedTag] = useState('')
 
+  // carga luego del contenido de la pagina
   useEffect(() => {
     async function PopulateSelect() {
       const data = await fetchTags();
@@ -19,6 +22,8 @@ function MainForm({ onSelectDetail }) {
     PopulateSelect();
   }, []);
   
+  // funciones para manejar los eventos
+
   async function handleFilter(e) {
     const tag = e.target.value
     SetSelectedTag(tag)
@@ -33,7 +38,7 @@ function MainForm({ onSelectDetail }) {
     window.alert('yo added one vote')
   }
 
-
+  // permite mostar un campo a la vez
   function ChangeVisibility(id) {
     SetVisibility(visibility === id ? null : id);
     SetCommentText('');
@@ -47,6 +52,8 @@ function MainForm({ onSelectDetail }) {
   }
    return (
       <div className="form-group">
+        {/* elementos de agregar link y agregar tag se inyectan aca */}
+        {/* add link recibe una prop para llenar el select */}
         <AddLink tags={tags.filter(t => t.name !== "Todos")} />
         <AddTag />
 
@@ -59,7 +66,7 @@ function MainForm({ onSelectDetail }) {
             ))}
           </select>
         </div>
-
+            {/* renderiza esta parte solo si hay tags seleccionados */}
         {selectedTag && (
           <div className="full-width">
             <table>

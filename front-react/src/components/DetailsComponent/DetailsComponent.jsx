@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 import { fetchDetails } from "../../../api";
 import { postVote } from "../../../api";
 
+// componente para detalles de los registros
 function Details({ id, onBack }) {
+  // vsriables de estado
   const [record, SetRecord] = useState(null);
 
+  // carga despues de todo
   useEffect(() => {
     async function loadDetails() {
       const data = await fetchDetails(id);
