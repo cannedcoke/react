@@ -1,0 +1,47 @@
+header {
+  border-bottom: 1px solid var(--line);
+  background-color: var(--bg-1);
+  backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@keyframes dot-cycle {
+  0%   { background: var(--accent); }
+  33%  { background: var(--green); }
+  66%  { background: var(--red); }
+  100% { background: var(--accent); }
+}
+
+.logo-text::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  animation: dot-cycle 3s ease-in-out infinite;
+}

@@ -1,0 +1,77 @@
+button#btn-volver {
+  background: transparent;
+  color: var(--text-2);
+  border: 1px solid var(--line-mid);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.8rem;
+}
+
+button#btn-volver:hover {
+  border-color: var(--line-bright);
+  color: var(--text);
+}
+
+button.vote_btn {
+  background: transparent;
+  color: var(--text-2);
+  border: 1px solid var(--line-mid);
+  padding: 0.28rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-top: 0;
+  border-radius: 4px;
+}
+
+button.vote_btn:hover {
+  border-color: var(--green);
+  color: var(--green);
+  background: var(--green-dim);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead tr { border-bottom: 1px solid var(--line-mid); }
+
+th {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  text-align: left;
+  padding: 0.85rem 1rem;
+  background: var(--bg-1);
+  border: none;
+}
+
+td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-2);
+  vertical-align: middle;
+}
+
+td:first-child {
+  color: var(--text);
+  font-weight: 500;
+}
+
+tr:last-child td { border-bottom: none; }
+
+tbody tr { transition: background 0.1s; }
+
+tbody tr:hover td { background: var(--bg-2); }
